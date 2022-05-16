@@ -47,8 +47,6 @@ const CoinDetails = ({coin, graph}) => {
         data2[i] = data[i][1]
     }
 
-    console.log(data1)
-
     return (
         <div className={styles.coinDetails}>
             <div className={styles.breadcrumb}>
