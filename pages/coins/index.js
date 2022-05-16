@@ -8,7 +8,11 @@ import { useEffect } from 'react'
 import FuzzySearch from 'fuzzy-search';
 
 export const getStaticProps = async () => {
-    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=35&page=1&sparkline=false',{
+        headers: {
+            ContentType: 'application/json'
+        }
+    })
     const data = await res.json()
 
     return {
@@ -26,9 +30,9 @@ const Coins = ({coins}) => {
         caseSensitive: false,
     });
 
-    const filteredCoins = coins.filter(coin => {
-        coin.id.toLowerCase().includes(search.toLowerCase())
-    })
+    // const filteredCoins = coins.filter(coin => {
+    //     coin.id.toLowerCase().includes(search.toLowerCase())
+    // })
 
     useEffect(() => {
         setResult(searcher.search(search.toLowerCase()));
@@ -40,8 +44,6 @@ const Coins = ({coins}) => {
         setSearch(e.target.value.toLowerCase())
     }
 
-    console.log(result)
-    
     return (
         <div className={styles.coins}>
             <Searchbar type='text' placeholder='Search' onChange={handleChange} />
