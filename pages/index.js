@@ -40,8 +40,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
         <div className={styles.imageContainer}>
-          {width <= breakpoint && <Image className={styles.image} src='/favicon.png' width={280} height={280} />}
           {width > breakpoint && <Image className={styles.image} src='/favicon.png' width={500} height={500} />}
+          {width <= breakpoint && <Image className={styles.image} src='/favicon.png' width={280} height={280} />}
         </div>
 
         <div className={styles.info}>
