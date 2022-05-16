@@ -1,0 +1,30 @@
+.coins{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    margin: 0 auto;
+}
+
+.coins::-webkit-scrollbar {
+    display: none;
+}
+
+.coins {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@media only screen and (min-width: 1000px){
+    .coins{
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        max-height: 90vh;
+        overflow-y: scroll;
+        margin: 0 auto;
+    }
+}

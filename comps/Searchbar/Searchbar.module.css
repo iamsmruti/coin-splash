@@ -1,0 +1,14 @@
+.searchbar{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.search_input{
+    background-color: black;
+    border: 1px solid rgba(211, 211, 211, 0.357);
+    outline: none;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 300px;
+}
